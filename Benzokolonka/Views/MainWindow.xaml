@@ -1,0 +1,385 @@
+﻿<Window x:Class="Benzokolonka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Benzokolonka"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1000" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="RectangleStyle" TargetType="Button">
+            <Setter Property="BorderThickness" Value="0"/>
+
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style x:Key="KeyButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="7"/>
+            <Setter Property="Width" Value="10"/>
+            <Setter Property="Height" Value="13"/>
+            <Setter Property="Margin" Value="1"/>
+        </Style>
+        <Style x:Key="KeyOperationStyle" TargetType="Button" BasedOn="{StaticResource KeyButtonStyle}">
+            <Setter Property="Width" Value="21"/>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        
+            
+        <Grid >
+            <Canvas >
+               
+                <Image Source="..//Recourses/benz.png" Canvas.Left="120" Height="800"/>
+                
+                <Canvas Margin="270,400,0,0" Canvas.Left="0" Canvas.Top="0">
+                    <Canvas Margin="0">
+
+                        <Path Stroke="Black" x:Name="hosepipe80" StrokeThickness="10" Fill="Transparent" Canvas.Left="100" Canvas.Top="270">
+                            <Path.Data>
+                                <PathGeometry>
+                                    <PathFigure x:Name="hosePipePathFigure80" StartPoint="25,0">
+                                        <BezierSegment x:Name="hosePipeBezier80" Point1="-20,80" Point2="-60,30" Point3="20,-600"/>
+
+                                        <!--<BezierSegment x:Name="hosePipeBezier80" Point1="200,80" Point2="-60,-10" Point3="20,-600"/>-->
+                                    </PathFigure>
+                                </PathGeometry>
+                            </Path.Data>
+                        </Path>
+
+                    </Canvas>
+                    <Button Style="{StaticResource RectangleStyle}" x:Name="But80" Click="Button_Click" Canvas.Left="0" Canvas.Top="0">
+                        <Button.RenderTransform>
+                            <RotateTransform/>
+
+                        </Button.RenderTransform>
+                        <Canvas x:Name="mainCanvas">
+
+                            <Rectangle Width="8" Height="70" Canvas.Left="118" Canvas.Top="150" x:Name="gunRectangle" >
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="Silver" Offset="0"/>
+                                        <GradientStop Color="DarkGray" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Path Fill="Black" Canvas.Left="114" Canvas.Top="280">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="0,0">
+                                            <BezierSegment Point1="5,5" Point2="10,5" Point3="15,0"/>
+                                            <LineSegment Point="15,-15"/>
+                                            <LineSegment Point="0,-15"/>
+                                            <LineSegment Point="0,0"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+                            <Path Fill="Red" Canvas.Left="114" Canvas.Top="240">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="0,0">
+                                            <BezierSegment Point1="5,5" Point2="10,5" Point3="15,0"/>
+                                            <LineSegment Point="15,-15"/>
+                                            <LineSegment Point="0,-15"/>
+                                            <LineSegment Point="0,0"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+                            <Path Fill="Red" Canvas.Left="114" Canvas.Top="220">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="0,0">
+                                            <BezierSegment Point1="5,-5" Point2="10,-5" Point3="15,0"/>
+                                            <LineSegment Point="15,15"/>
+                                            <LineSegment Point="0,15"/>
+                                            <LineSegment Point="0,0"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+
+
+                            <Ellipse Width="30" Height="30" Canvas.Left="106" Canvas.Top="238" Fill="Red"/>
+                            <Ellipse Width="26" Height="26" Canvas.Left="108" Canvas.Top="240" Fill="Red"/>
+                            <Ellipse Width="25" Height="25" Canvas.Left="108.5" Canvas.Top="230.5" Fill="Black"/>
+                            <Ellipse Width="24" Height="24" Canvas.Left="109" Canvas.Top="231" Fill="White"/>
+                            <Ellipse Width="16" Height="16" Canvas.Left="113" Canvas.Top="235" Fill="Red"/>
+                            <TextBlock Text="80" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"
+           Canvas.Left="110" Canvas.Top="236" Width="23" Height="26" TextAlignment="Center"
+                       FontSize="10"/>
+
+
+
+                        </Canvas>
+                    </Button>
+
+                    <Canvas >
+                        <Path Stroke="Black" x:Name="hosepipe92" StrokeThickness="10" Fill="Transparent" Canvas.Left="240" Canvas.Top="270">
+                            <Path.Data>
+                                <PathGeometry>
+                                    <PathFigure x:Name="hosePipePathFigure92" StartPoint="0,0">
+                                        <BezierSegment x:Name="hosePipeBezier92"  Point1="10,30" Point2="60,30" Point3="0,-600"/>
+                                    </PathFigure>
+                                </PathGeometry>
+                            </Path.Data>
+                        </Path>
+                    </Canvas>
+                    <Button Click="But92_Click" x:Name="But92" Style="{StaticResource RectangleStyle}" Canvas.Left="0" Canvas.Top="0">
+                        <Button.RenderTransform>
+                            <RotateTransform/>
+
+                        </Button.RenderTransform>
+                        <Canvas Canvas.Left="0">
+                            <Rectangle Width="8" Height="70" Canvas.Left="238" Canvas.Top="140">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="Silver" Offset="0"/>
+                                        <GradientStop Color="DarkGray" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Path Fill="Black" Canvas.Left="234" Canvas.Top="270">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="0,0">
+                                            <BezierSegment Point1="5,5" Point2="10,5" Point3="15,0"/>
+                                            <LineSegment Point="15,-15"/>
+                                            <LineSegment Point="0,-15"/>
+                                            <LineSegment Point="0,0"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+                            <Path Fill="Yellow" Canvas.Left="234" Canvas.Top="230">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="0,0">
+                                            <BezierSegment Point1="5,5" Point2="10,5" Point3="15,0"/>
+                                            <LineSegment Point="15,-15"/>
+                                            <LineSegment Point="0,-15"/>
+                                            <LineSegment Point="0,0"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+                            <Path Fill="Yellow" Canvas.Left="234" Canvas.Top="210">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="0,0">
+                                            <BezierSegment Point1="5,-5" Point2="10,-5" Point3="15,0"/>
+                                            <LineSegment Point="15,15"/>
+                                            <LineSegment Point="0,15"/>
+                                            <LineSegment Point="0,0"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+
+
+                            <Ellipse Width="30" Height="30" Canvas.Left="226" Canvas.Top="238" Fill="Yellow"/>
+                            <Ellipse Width="26" Height="26" Canvas.Left="228" Canvas.Top="240" Fill="Yellow"/>
+                            <Ellipse Width="25" Height="25" Canvas.Left="228" Canvas.Top="230.5" Fill="Black"/>
+                            <Ellipse Width="24" Height="24" Canvas.Left="229" Canvas.Top="231" Fill="White"/>
+                            <Ellipse Width="16" Height="16" Canvas.Left="233" Canvas.Top="235" Fill="Yellow"/>
+                            <TextBlock Text="92" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"
+           Canvas.Left="230" Canvas.Top="236" Width="23" Height="26" TextAlignment="Center"
+                       FontSize="10"/>
+                        </Canvas>
+                    </Button>
+
+                    <Canvas >
+                        <Path Stroke="Black" x:Name="hosepipe95" StrokeThickness="10" Fill="Transparent" Canvas.Left="350" Canvas.Top="270">
+                            <Path.Data>
+                                <PathGeometry>
+                                    <PathFigure x:Name="hosePipePathFigure95" StartPoint="0,0">
+                                        <BezierSegment x:Name="hosePipeBezier95"  Point1="10,30" Point2="60,30" Point3="10,-600"/>
+                                    </PathFigure>
+                                </PathGeometry>
+                            </Path.Data>
+                        </Path>
+                    </Canvas>
+                    <Button Style="{StaticResource RectangleStyle}" x:Name="But95" Click="But95_Click" Canvas.Left="0" Canvas.Top="0">
+                        <Button.RenderTransform>
+                            <RotateTransform/>
+
+                        </Button.RenderTransform>
+                        <Canvas >
+
+                            <Rectangle Width="8" Height="70" Canvas.Left="348" Canvas.Top="140">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="Silver" Offset="0"/>
+                                        <GradientStop Color="DarkGray" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Path Fill="Black" Canvas.Left="344" Canvas.Top="270">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="0,0">
+                                            <BezierSegment Point1="5,5" Point2="10,5" Point3="15,0"/>
+                                            <LineSegment Point="15,-15"/>
+                                            <LineSegment Point="0,-15"/>
+                                            <LineSegment Point="0,0"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+                            <Path Fill="Green" Canvas.Left="344" Canvas.Top="230">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="0,0">
+                                            <BezierSegment Point1="5,5" Point2="10,5" Point3="15,0"/>
+                                            <LineSegment Point="15,-15"/>
+                                            <LineSegment Point="0,-15"/>
+                                            <LineSegment Point="0,0"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+                            <Path Fill="Green" Canvas.Left="344" Canvas.Top="210">
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="0,0">
+                                            <BezierSegment Point1="5,-5" Point2="10,-5" Point3="15,0"/>
+                                            <LineSegment Point="15,15"/>
+                                            <LineSegment Point="0,15"/>
+                                            <LineSegment Point="0,0"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+
+
+                            <Ellipse Width="30" Height="30" Canvas.Left="336" Canvas.Top="238" Fill="Green"/>
+                            <Ellipse Width="26" Height="26" Canvas.Left="338" Canvas.Top="240" Fill="Green"/>
+                            <Ellipse Width="25" Height="25" Canvas.Left="338.5" Canvas.Top="230.5" Fill="Black"/>
+                            <Ellipse Width="24" Height="24" Canvas.Left="339" Canvas.Top="231" Fill="White"/>
+                            <Ellipse Width="16" Height="16" Canvas.Left="343" Canvas.Top="235" Fill="Green"/>
+                            <TextBlock Text="95" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"
+           Canvas.Left="340" Canvas.Top="236" Width="23" Height="26" TextAlignment="Center"
+                       FontSize="10"/>
+                        </Canvas>
+                    </Button>
+                    
+                </Canvas>
+                
+                <TextBlock x:Name="FuelNum"
+                           Width="70" Height="20" 
+                           Background="White" 
+                           Canvas.Left="377"
+                           Canvas.Top="305"
+                           TextAlignment="Right"
+                           Padding="3"
+                           FontSize="10"
+                           Text="0"
+                           VerticalAlignment="Center"/>
+                <TextBlock x:Name="RubNow"
+                           Width="70" Height="20" Background="White" 
+                           TextAlignment="Right"
+                           Padding="3"
+                           Canvas.Left="377"
+                           TextWrapping="Wrap"
+                           FontSize="10"
+                           Text="0"
+                           Canvas.Top="335"
+                           VerticalAlignment="Center"/>
+                
+                <Button Width="50" Height="60"
+                        Canvas.Left="364"
+                        Canvas.Top="390"
+                        x:Name="PamyatkaButton"
+                        Click="PamyatkaButton_Click">
+
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock FontWeight="Bold" HorizontalAlignment="Center" FontSize="8">Внимание!</TextBlock>
+                        <TextBlock FontSize="6" HorizontalAlignment="Center">с 21 по 24</TextBlock>
+                        <TextBlock FontSize="6" HorizontalAlignment="Center">обслуживание</TextBlock>
+                        <TextBlock FontSize="6" HorizontalAlignment="Center">проводится</TextBlock>
+                        <TextBlock FontSize="6" Foreground="Red" HorizontalAlignment="Center">НЕ БУДЕТ!!!</TextBlock>
+
+                    </StackPanel>
+                </Button>
+                <Border Canvas.Top="240" Canvas.Left="460" Width="220" Height="210" Background="#FF999899">
+                    <StackPanel Orientation="Horizontal" >
+                        <Border Background="White" 
+                            Margin="2,0,0,0"
+                            Width="216" 
+                            Height="210"
+                        CornerRadius="10">
+                            <local:ChooseBenzUserControl/>
+                        </Border>
+                        <StackPanel Margin="4,20,0,0">
+
+                            <!--<Border Background="LightGray" 
+                            
+                            Width="59" 
+                            Height="70"
+                        CornerRadius="3">
+                                <StackPanel Orientation="Vertical">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Style="{StaticResource KeyButtonStyle}"
+                                    Content="1"
+                                    />
+                                        <Button Style="{StaticResource KeyButtonStyle}"
+                                    Content="2"/>
+                                        <Button Content="3"
+                                    Style="{StaticResource KeyButtonStyle}"/>
+                                        <Button Background="Red" Content="X" 
+                                    Style="{StaticResource KeyOperationStyle}"/>
+
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Style="{StaticResource KeyButtonStyle}"
+                                    Content="4"
+                                    />
+                                        <Button Style="{StaticResource KeyButtonStyle}"
+                                    Content="5"/>
+                                        <Button Content="6"
+                                    Style="{StaticResource KeyButtonStyle}"/>
+                                        <Button Background="Orange" Content="Clear" 
+                                    Style="{StaticResource KeyOperationStyle}"/>
+
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Style="{StaticResource KeyButtonStyle}"
+                                    Content="7"
+                                    />
+                                        <Button Style="{StaticResource KeyButtonStyle}"
+                                    Content="8"/>
+                                        <Button Content="9"
+                                    Style="{StaticResource KeyButtonStyle}"/>
+                                        <Button Background="Green" Content="Enter" 
+                                    Style="{StaticResource KeyOperationStyle}"/>
+
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Style="{StaticResource KeyButtonStyle}"
+                                    Content=""
+                                    />
+                                        <Button Style="{StaticResource KeyButtonStyle}"
+                                    Content="0"/>
+                                        <Button Content=""
+                                    Style="{StaticResource KeyButtonStyle}"/>
+                                        <Button  
+                                    Style="{StaticResource KeyOperationStyle}"/>
+
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </Border>-->
+                        </StackPanel>
+                    </StackPanel>
+                    
+                </Border>
+                <Rectangle Canvas.Top="465" HorizontalAlignment="Right" Width="3" Fill="Red" Height="30">
+                    <Rectangle.RenderTransform>
+                        <RotateTransform Angle="0"/>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+            </Canvas>
+        </Grid>
+    </Grid>
+    
+</Window>

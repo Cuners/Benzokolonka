@@ -1,0 +1,193 @@
+﻿<UserControl x:Class="Benzokolonka.ChooseBenzUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Benzokolonka"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="ButProcent" TargetType="Button">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="FontSize" Value="14"/>
+            
+            <Setter Property="Background" Value="LightCoral"/>
+            
+        </Style>
+        <Style x:Key="KeyButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="7"/>
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="13"/>
+            <Setter Property="Margin" Value="1"/>
+        </Style>
+        <Style x:Key="KeyOperationStyle" TargetType="Button" BasedOn="{StaticResource KeyButtonStyle}">
+            <Setter Property="Width" Value="41"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Border Background="Orange" CornerRadius="10">
+            <StackPanel>
+                <TextBlock FontSize="10" 
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center">Добро пожаловать</TextBlock>
+                <TextBlock FontSize="10" 
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center">на заправку АЗС "Бомба"</TextBlock>
+                <TextBlock FontSize="8" 
+                           Margin="0,2,0,0"
+                           HorizontalAlignment="Center">Выберите процентность бензина</TextBlock>
+                <ComboBox FontSize="7" x:Name="myComboBox" SelectionChanged="ComboBox_SelectionChanged" Width="60" Height="15" HorizontalAlignment="Center" Margin="5">
+                    
+                </ComboBox>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel>
+                        <TextBlock FontSize="7" 
+                           
+                           HorizontalAlignment="Center">Введите объем</TextBlock>
+                        <TextBox x:Name="TextBoxName" 
+                                 TextChanged="TextBoxName_TextChanged"
+                                 GotFocus="TextBoxName_GotFocus"
+                                 HorizontalAlignment="Center" 
+                                 Width="90"
+                                 IsEnabled="False"
+                                 >
+                            
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Margin="7,0,0,0">
+                        <TextBlock FontSize="7" 
+                           
+                           HorizontalAlignment="Center">Ожидаемая цена(руб)</TextBlock>
+                        <TextBox HorizontalAlignment="Center" 
+                                 Width="90" 
+                                 IsReadOnly="True"
+                                 x:Name="RubTextBox"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel>
+                        <TextBlock FontSize="7" 
+                           
+                           HorizontalAlignment="Center">Номер карты</TextBlock>
+                        <TextBox x:Name="TextBoxNamePin" 
+                                GotFocus="TextBoxNamePin_GotFocus"
+                                 HorizontalAlignment="Center" 
+                                 Width="90"
+                                 FontSize="7"
+                                 VerticalAlignment="Center"
+                                 Height="18"
+                                 IsEnabled="False"
+                                 >
+
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Margin="7,0,0,0">
+                        <TextBlock FontSize="7" 
+                           
+                           HorizontalAlignment="Center">CVC</TextBlock>
+                        <TextBox HorizontalAlignment="Center"
+                                 x:Name="TextBoxNameCVV"
+                                
+                                 GotFocus="TextBox_GotFocus"
+                                 Width="90" 
+                                 IsEnabled="False"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <TextBlock 
+                           Margin="0"
+                           FontSize="7"
+                           x:Name="ErrorTextBox"
+                           Foreground="#FF891111"
+                           HorizontalAlignment="Center"/>
+                <Button HorizontalAlignment="Center"
+                        FontSize="7" Margin="0,3,0,3"
+                        Background="Coral"
+                        x:Name="PayButton"
+                        Click="PayButton_Click">Оплатить</Button>
+                <Border Background="LightGray" 
+                            
+                            Width="240" 
+                            Height="70"
+                        CornerRadius="3">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource KeyButtonStyle}"
+                                    Content="1"
+                                    x:Name="But1"
+                                    Click="But1_Click"
+                                    />
+                            <Button Style="{StaticResource KeyButtonStyle}"
+                                    x:Name="But2"
+                                    Content="2"
+                                    Click="But2_Click"/>
+                            <Button Content="3"
+                                    x:Name="But3"
+                                    Click="But3_Click"
+                                    Style="{StaticResource KeyButtonStyle}"/>
+                            <Button Background="Red" Content="X" 
+                                    x:Name="ButX" Click="ButX_Click"
+                                    Style="{StaticResource KeyOperationStyle}"
+                                    />
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource KeyButtonStyle}"
+                                    Content="4"
+                                    x:Name="But4"
+                                    Click="But4_Click"
+                                    />
+                            <Button Style="{StaticResource KeyButtonStyle}"
+                                    Content="5"
+                                    x:Name="But5"
+                                    Click="But5_Click"/>
+                            <Button Content="6"
+                                    Style="{StaticResource KeyButtonStyle}"
+                                    x:Name="But6"
+                                    Click="But6_Click"/>
+                            <Button Background="Orange" Content="&lt;-" 
+                                    x:Name="Butback" Click="Butback_Click"
+                                    Style="{StaticResource KeyOperationStyle}"
+                                    />
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource KeyButtonStyle}"
+                                    Content="7"
+                                    x:Name="But7"
+                                    Click="But7_Click"
+                                    />
+                            <Button Style="{StaticResource KeyButtonStyle}"
+                                    Content="8"
+                                    x:Name="But8"
+                                    Click="But8_Click"/>
+                            <Button Content="9"
+                                    Style="{StaticResource KeyButtonStyle}"
+                                    x:Name="But9"
+                                    Click="But9_Click"/>
+                            <Button 
+                                    
+                                    Style="{StaticResource KeyOperationStyle}"/>
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource KeyButtonStyle}"
+                                    Content=""
+                                    />
+                            <Button Style="{StaticResource KeyButtonStyle}"
+                                    Content="0"
+                                    x:Name="But0"
+                                    Click="But0_Click"/>
+                            <Button Content=""
+                                    Style="{StaticResource KeyButtonStyle}"/>
+                            <Button  
+                                    Style="{StaticResource KeyOperationStyle}"/>
+
+                        </StackPanel>
+                    </StackPanel>
+
+                </Border>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
